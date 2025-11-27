@@ -1,49 +1,16 @@
-[<img src="https://api.gitsponsors.com/api/badge/img?id=550458554" height="50">](https://api.gitsponsors.com/api/badge/link?p=7CZMAf5OYzLudfMZSz9tTJTWlTBs3oYznejemgQ7z5pp9YrAh0OF5dw93jmz+jI/JIRohjpacC04HjHnS24yqfwEs2+G8GlCS2XZrFY1kaGjCzhi+gXovxm3yl7P3/iiWI3outF4tnfhj9we9sUK6Q==)
+## LUA 5.3.5 for iOS
 
-
-## LUA for iOS and macOS (Intel & Apple Silicon M1) & Catalyst - arm64 / x86_64
-
-Supported versions: 5.4.6, 5.4.5, 5.4.4
-
-This repo provides a universal script for building static LUA library for use in iOS and macOS applications.
-The latest supported LUA version is taken from: https://www.lua.org/ftp/lua-5.4.6.tar.gz
+This repo provides a universal script for building static LUA library for use in iOS applications.\
+The latest supported LUA version is taken from: https://www.lua.org/ftp/lua-5.3.5.tar.gz\
 
 ## Prerequisites
-  1) Xcode must be installed because xcodebuild is used to create xcframeworks
-  2) ```xcode-select -p``` must point to Xcode app developer directory (by default e.g. /Applications/Xcode.app/Contents/Developer). If it points to CommandLineTools directory you should execute:
+  1) ```xcode-select -p``` must point to Xcode app developer directory (by default e.g. /Applications/Xcode.app/Contents/Developer). If it points to CommandLineTools directory you should execute:
   ```sudo xcode-select --reset``` or ```sudo xcode-select -s /Applications/Xcode.app/Contents/Developer```
   
 ## How to build?
- - Manually
 ```
-    # clone the repo
-    git clone https://github.com/apotocki/lua-iosx
-    
-    # build libraries
-    cd lua-iosx
-    scripts/build.sh
-
-    # have fun, the result artifacts will be located in 'frameworks' folder.
-```    
- - Use cocoapods. Add the following lines into your project's Podfile:
+git clone https://github.com/DelofJ/lua-iosx
+cd lua-iosx
+./build.sh
 ```
-    use_frameworks!
-    pod 'lua-iosx', '~> 5.4.6'
-    # or optionally more precisely
-    # pod 'lua-iosx', :git => 'https://github.com/apotocki/lua-iosx', :tag => '5.4.6.0'
-```    
-install new dependency:
-```
-   pod install --verbose
-```
-
-## As an advertisement…
-The LUA library built by this project is used in my iOS application on the App Store:
-
-[<table align="center" border=0 cellspacing=0 cellpadding=0><tr><td><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple112/v4/78/d6/f8/78d6f802-78f6-267a-8018-751111f52c10/AppIcon-0-1x_U007emarketing-0-10-0-85-220.png/460x0w.webp" width="70"/></td><td><a href="https://apps.apple.com/us/app/potohex/id1620963302">PotoHEX</a><br>HEX File Viewer & Editor</td><tr></table>]()
-
-This app is designed for viewing and editing files at the byte or character level.
-  
-You can support my open-source development by trying the [App](https://apps.apple.com/us/app/potohex/id1620963302).
-
-Feedback is welcome!
+The resulting library will be located at `lua/out/liblua.a`
